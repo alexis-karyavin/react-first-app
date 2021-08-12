@@ -4,7 +4,7 @@ import { useState } from 'react';
 import HelloWorld from './components/HelloWorld/HelloWorld';
 
 function App() {
-  const [title, setTitle] = useState('Шапка');
+  const [title] = useState('Шапка');
   return (
     <div className="App">
       {title}
