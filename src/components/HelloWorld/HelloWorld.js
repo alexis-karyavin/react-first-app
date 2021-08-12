@@ -1,4 +1,4 @@
-import './HelloWorld.scss';
+// import './HelloWorld.scss';
 
 // import React, { useState } from 'react';
 
@@ -19,6 +19,10 @@ import './HelloWorld.scss';
 //     setLogin(false);
 //   } 
 
+//   const items = [1, 2, 3, 4, 5];
+//   const listItem = items.map(item => <li>{item}</li>);
+//   const list = <ul>{listItem}</ul>
+
 //   let button;
 //   if (isLogin) {
 //     button = <button onClick={clickBtnLogout}>Exit</button>;
@@ -30,6 +34,9 @@ import './HelloWorld.scss';
 //     <div className="container-hello">
 //       {props.text}<br></br>
 //       {button}
+//       <div className="list">
+//         {list}
+//       </div>
 //     </div>
 //   );
 // };
@@ -43,6 +50,7 @@ export default class HelloWorld extends Component {
     super(props);
     this.state = {
       isLogin: false,
+      items: [1, 2, 3, 4, 5],
     }
 
     // this.clickBtnLogin = this.clickBtnLogin.bind(this);
@@ -73,6 +81,7 @@ export default class HelloWorld extends Component {
     // } else {
     //   button = <button onClick={this.clickBtn.bind(this, 'login', true)}>Login</button>;
     // }
+    const itemList = this.state.items.map(item => <li>{item}</li>)
     return (
       <div className="container-hello">
         {this.props.text}
@@ -82,6 +91,7 @@ export default class HelloWorld extends Component {
           ?  <button onClick={this.clickBtn.bind(this, 'logout', false)}>Exit</button>
           :  <button onClick={this.clickBtn.bind(this, 'login', true)}>Login</button>
         }
+        <ul>{itemList}</ul>
       </div>
     )
   }
